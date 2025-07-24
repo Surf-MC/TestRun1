@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+        h1 { text-align: center; }
+        .container { max-width: 400px; margin: auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+        button { padding: 10px; background: #333; color: white; border: none; cursor: pointer; width: 100%; margin-top: 10px; }
+        .message { color: green; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your Account</h1>
+    <p>Welcome, <span id="userEmail">user@example.com</span></p>
+
+    <p id="discordLinkStatus"></p>
+    <button id="linkDiscord">Link your Discord account</button>
+    <button id="logoutBtn">Logout</button>
+</div>
+
+<script>
+    // Simulated user data - in a real app, this would come from the server after login
+    const userData = {
+        email: 'user@example.com', // This should be fetched from the server
+        discordId: null             // Change to a real ID if the user has linked their Discord account
+    };
+
+    document.getElementById('userEmail').textContent = userData.email;
+
+    if (userData.discordId) {
+        document.getElementById('discordLinkStatus').textContent = "Discord account linked successfully!";
+    } else {
+        document.getElementById('discordLinkStatus').textContent = "No Discord account linked.";
+    }
+
+    document.getElementById('linkDiscord').addEventListener('click', function() {
+        const discordUrl = 'https://discord.com/api/oauth2/authorize?client_id=YOUR_DISCORD_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify';
+        window.location.href = discordUrl;
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+        // Here you would send a request to your server to log the user out
+        alert('You have been logged out. (Backend not implemented)');
+        // Redirect to login page (assuming you'd handle the backend logout)
+        window.location.href = 'login.html';
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Frequently Asked Questions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0D0D0D;
+            color: #E0E0E0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #1A1A1A;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: #E0E0E0;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #3A3A3A;
+            color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        .faq {
+            background-color: #2E2E2E;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq:hover {
+            background-color: #3A3A3A;
+        }
+
+        .faq-details {
+            display: none;
+            padding: 15px;
+            background-color: #3A3A3A;
+            border-radius: 5px;
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        .help-button {
+            background-color: #E0E0E0;
+            color: #0D0D0D;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .help-button:hover {
+            background-color: #3A3A3A;
+            color: #FFFFFF;
+        }
+        
+        footer {
+            background-color: #1A1A1A;
+            color: #E0E0E0;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Store</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+        <a href="#">Help</a>
+    </div>
+
+    <div class="container">
+        <h1>Help - Frequently Asked Questions</h1>
+        <a href="https://example.com/help-center" class="help-button">Visit Help Center</a>
+
+        <div class="faq" onclick="toggleDetails('faq1-details')">
+            <h3>What is the Minecraft Server?</h3>
+            <div class="faq-details" id="faq1-details">
+                <p>The Minecraft Server is a community-driven server where players can explore, build, and play together in a vast sandbox environment.</p>
+            </div>
+        </div>
+
+        <div class="faq" onclick="toggleDetails('faq2-details')">
+            <h3>How can I join the server?</h3>
+            <div class="faq-details" id="faq2-details">
+                <p>You can join the server by entering the server IP address in the multiplayer section of your Minecraft client. Check our website for the current IP.</p>
+            </div>
+        </div>
+
+        <div class="faq" onclick="toggleDetails('faq3-details')">
+            <h3>What are the server rules?</h3>
+            <div class="faq-details" id="faq3-details">
+                <p>Our server rules promote a friendly environment; no griefing, cheating, or harassment is allowed. Please read the full rules on our website.</p>
+            </div>
+        </div>
+
+        <div class="faq" onclick="toggleDetails('faq4-details')">
+            <h3>How do I report an issue?</h3>
+            <div class="faq-details" id="faq4-details">
+                <p>If you encounter any problems, please contact our support team through the support link found on our website.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Minecraft Server. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDetails(detailId) {
+            const details = document.getElementById(detailId);
+            details.style.display = details.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
